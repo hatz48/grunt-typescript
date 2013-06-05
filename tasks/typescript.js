@@ -306,7 +306,7 @@ module.exports = function (grunt) {
             }
         });
         compiler.typeCheck();
-        if(compiler.errorReporter.hasErrors){
+        if(compiler.errorReporter.hasErrors && !options.ignoreTypeCheck){
             return false;
         }
         compiler.emit(io);
